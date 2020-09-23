@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Baloo Tammudu 2", cursive;
+}
+h1 {
+    text-align: center;
+    font-size: 72px;
+    color: rgb(226, 40, 34);
+}
+#container {
+    width: 100%;
+    height: 960px;
+    display: flex;
+    justify-content: center;
+}
+
+#calculator {
+    width: 450px;
+    height: 600px;
+    background-color: rgb(192, 192, 192);
+    display: grid;
+    box-shadow: 10px 10px 5px black;
+    border-radius: 25px;
+}
+
+#display {
+    background-color: lightblue;
+    height: 80px;
+    width: 360px;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 50px;
+    border-radius: 25px;
+}
+
+#head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    background-color: #272525;
+    border-radius: 0 0 23px 24px;
+}
+
+.btn-container {
+    flex: 1 0 auto;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.button {
+    width: 80px;
+    height: 65px;
+    background-color: orange;
+    border: 1px solid rgb(34, 34, 34);
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    border-radius: 25px;
+    transition: all .09s ease;
+}
+
+#function {
+    height: 80px;
+    width: 200px;
+    flex: 1 0 auto;
+    background-color: rgb(77, 76, 76);
+}
+
+.zero {
+    width: 150px;
+    height: 80px;
+}
+
+.operator {
+    background-color: grey;
+    align-self: center;
+}
+
+.clicked {
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem black;
+}
