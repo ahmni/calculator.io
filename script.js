@@ -2,12 +2,16 @@ var operators = { //map of operators that, when it sees the string version of th
     '+': function(a, b) { return a + b },
     '-': function(a, b) { return a - b },
     '*': function(a, b) { return a * b },
-    '/': function(a, b) { return a / b }
+    '/': function(a, b) { if (b === 0) {
+        return 'ERROR'
+    } else {
+        return a / b 
+    }
+    }
 };
 
-startDisplay = 0;
 arrDisplay = [];
-
+const clear = document.querySelector("div[data-action='clear']");
 const dis = document.querySelector('#display');
 
 const button = document.querySelectorAll('.button');
@@ -16,6 +20,7 @@ button.forEach(bt => bt.addEventListener('click', e => {
         const key = e.target; // finds each button's id
         const action = key.dataset.action; // finds the data-action of each button
         key.classList.add('clicked');
+        clear.innerText =  'CE';
         bt.addEventListener('transitionend', removeTransition)
         if (!action) { // if no action, it is a number key
             console.log('number key');
@@ -23,11 +28,15 @@ button.forEach(bt => bt.addEventListener('click', e => {
         } else if (action === 'decimal') {
             arrDisplay.push(bt.innerText);
             console.log('decimal');
-        } else if (action === 'clear'){
-            arrDisplay = [];
-            console.log('clear key');
-            return dis.innerText = startDisplay;
+        } else if (action === 'clear') {
+            if (clear.innerText == 'CE') {
+                arrDisplay.pop();
+            } else {
+                arrDisplay = [];
+                console.log('clear key');
+            }  
         } else if (action === 'equals') {
+            clear.innerText = 'AC';
             display = arrDisplay.join('');
             let numbers = display.replace(/([-+*\/])/g, ' ').split(' ');
             console.log(numbers);
@@ -58,14 +67,19 @@ button.forEach(bt => bt.addEventListener('click', e => {
             console.log(total);
             display = total
             arrDisplay = [];
-            arrDisplay.push(total);
-            return dis.innerText = display;  
+            if (total != 0) {
+                arrDisplay.push(total);  
+            }
         } else {
             console.log('operator key');
             arrDisplay.push(bt.innerText);
         }
         display = arrDisplay.join('');
         dis.innerText = display;
+        if (display === '') {
+            dis.innerText = '0';
+        }
+        console.log(dis.innerText);
     }
 }));
 
