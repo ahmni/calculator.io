@@ -7,14 +7,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet"> 
     </head>
     <body>
-        <h1>Basic Calculator</h1>
+        <h1>Calculator</h1>
         <div id='container'>
             <div id='calculator'>
                 <div id='head'>
                     <div id='display'>0</div>
                  </div>
                  <div id='body'>
-                    <div class='btn-container'>
+                    <div class='btn-container clear'>
                         <div class='button' data-action='clear' id='function'>AC</div>
                     </div> 
                     <div class='btn-container'>
@@ -32,8 +32,8 @@
                     <div class='btn-container'>
                         <div class='button'>3</div>
                     </div>
-                    <div class='btn-container'>
-                        <div class='button operator' data-action='multiply'>*</div>
+                    <div class='btn-container move'>
+                        <div class='button operator move' data-action='multiply'>*</div>
                     </div>
                     <div class='btn-container'>
                         <div class='button'>4</div>
@@ -44,8 +44,8 @@
                     <div class='btn-container'>
                         <div class='button'>6</div>
                     </div>
-                    <div class='btn-container'>
-                        <div class='button operator' data-action='divide' >/</div>
+                    <div class='btn-container move'>
+                        <div class='button operator move' data-action='divide' >/</div>
                     </div>
                     <div class='btn-container'>
                         <div class='button'>7</div>
@@ -56,14 +56,14 @@
                     <div class='btn-container'>
                         <div class='button'>9</div>
                     </div>
-                    <div class='btn-container'>
+                    <div class='btn-container move'>
                         <div class='button operator' data-action='decimal'>.</div>
                     </div>
                     <div class='btn-container'>
                         <div class='button zero'>0</div>
                     </div>
-                    <div class='btn-container'>
-                        <div class='button' id='function' data-action='equals'>=</div>
+                    <div class='btn-container equal'>
+                        <div class='button equal' id='function' data-action='equals'>=</div>
                     </div>
                  </div>
             </div>

@@ -31,7 +31,7 @@ h1 {
 }
 
 #display {
-    background-color: rgb(137, 208, 231);
+    background-color: rgb(114, 202, 231);
     height: 80px;
     width: 360px;
     text-align: right;
@@ -99,3 +99,65 @@ h1 {
     transform: scale(1.05);
     box-shadow: 0 0 1rem black;
 }
+
+
+@media only screen and (max-width: 400px) {
+    #calculator {
+      width: 90%;
+      height: 30%;
+    }
+    #head {
+        height: 80px;
+    }
+    #body {
+        width: 100%;
+        height: 350px;
+        box-shadow: 10px 10px 5px black;
+    }
+
+    #display {
+        width: 70%;
+        height: 40px;
+        font-size: 24px;
+    }
+    .btn-container  {
+        width: 80px;
+        height: 50px;
+        min-width: 0px;
+    }
+    .button {
+        width: 80%;
+        height: 75%;
+        line-height: 50px;
+        font-size: 28px;
+    }
+    
+    #function {
+        height: 50px;
+        width: 100px;
+        font-size: 32px;
+        line-height: 60px;
+    }
+    .zero { 
+        margin-left: 20px;
+        width: 100px;
+        height: 50px;
+        font-size: 24px;
+        line-height: 60px;
+    }
+
+    .equal {
+        width: 180px !important; 
+    }
+    .clear, .zero {
+        margin-left: 20px;
+    }
+
+    .operator {
+        align-self: flex-start;
+    }
+
+    #add, #subtract {
+        align-self: center;
+    }
+  }
