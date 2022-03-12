@@ -16,7 +16,14 @@ const dis = document.querySelector('#display');
 
 const button = document.querySelectorAll('.button');
 button.forEach(bt => bt.addEventListener('click', e => {
-    if (e.target.matches('div')) {
+    let temp;
+    if (display.length > 12 && display[0] != "E") {
+        temp = display;
+        arrDisplay.splice(13)
+        display = "Error: overflow"
+        dis.innerHTML = display;
+    }else if (e.target.matches('div')) {
+        if (temp) display = temp.slice(13);
         const key = e.target; // finds each button's id
         const action = key.dataset.action; // finds the data-action of each button
         key.classList.add('clicked');
@@ -42,7 +49,7 @@ button.forEach(bt => bt.addEventListener('click', e => {
             console.log(numbers);
             let arrExpression = [];
             for (let i = 0; i < arrDisplay.length; i++) {
-                if (display[i] != '+' || display[i] != '-' || arrDisplay[i] != '*' || arrDisplay[i] != '/') {
+                if (arrDisplay[i] != '+' || arrDisplay[i] != '-' || arrDisplay[i] != '*' || arrDisplay[i] != '/') {
                     arrExpression.push(arrDisplay[i]);
                 }
             }
@@ -69,6 +76,11 @@ button.forEach(bt => bt.addEventListener('click', e => {
             arrDisplay = [];
             if (total != 0) {
                 arrDisplay.push(total);  
+            }
+            if (isNaN(display)) {
+                display = 0;
+                dis.innerText = "Error: NaN"
+                return
             }
         } else {
             console.log('operator key');
