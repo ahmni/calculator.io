@@ -53,7 +53,7 @@ button.forEach(bt => bt.addEventListener('click', e => {
                 operator1:
                 for (let i = 0; i < arrDisplay.length; i++) {
                     if (arrDisplay[i] == '+' || arrDisplay[i] == '-' || arrDisplay[i] == '*' || arrDisplay[i] == '/') {
-                        total = operators[arrdDisplay[i]](parseFloat(numbers[j]), parseFloat(numbers[j+1]));
+                        total = operators[arrDisplay[i]](parseFloat(numbers[j]), parseFloat(numbers[j+1]));
                         numbers.shift();
                         numbers.shift();
                         numbers.unshift(total);
