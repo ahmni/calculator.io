@@ -42,8 +42,8 @@ button.forEach(bt => bt.addEventListener('click', e => {
             console.log(numbers);
             let arrExpression = [];
             for (let i = 0; i < arrDisplay.length; i++) {
-                if (arrDisplay[i] != '+' || arrDisplay[i] != '-' || arrDisplay[i] != '*' || arrDisplay[i] != '/') {
-                    arrExpression.push(display[i]);
+                if (display[i] != '+' || display[i] != '-' || arrDisplay[i] != '*' || arrDisplay[i] != '/') {
+                    arrExpression.push(arrDisplay[i]);
                 }
             }
             console.log(bt.innerText);
@@ -53,7 +53,7 @@ button.forEach(bt => bt.addEventListener('click', e => {
                 operator1:
                 for (let i = 0; i < arrDisplay.length; i++) {
                     if (arrDisplay[i] == '+' || arrDisplay[i] == '-' || arrDisplay[i] == '*' || arrDisplay[i] == '/') {
-                        total = operators[display[i]](parseFloat(numbers[j]), parseFloat(numbers[j+1]));
+                        total = operators[arrdDisplay[i]](parseFloat(numbers[j]), parseFloat(numbers[j+1]));
                         numbers.shift();
                         numbers.shift();
                         numbers.unshift(total);
